@@ -5,6 +5,7 @@ import android.graphics.Paint
 import android.graphics.Path
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageButton
 import com.example.whiteboard.paintview.Companion.colorList
 import com.example.whiteboard.paintview.Companion.currentBrush
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         val blueb=findViewById<ImageButton>(R.id.blue)
         val blackb=findViewById<ImageButton>(R.id.black)
         val whiteb=findViewById<ImageButton>(R.id.white)
+        val eraseb=findViewById<Button>(R.id.erase)
 
         redb.setOnClickListener{
             paintbrush.setColor(Color.RED)
@@ -41,6 +43,10 @@ class MainActivity : AppCompatActivity() {
             currentcolor(paintbrush.color)
         }
         whiteb.setOnClickListener{
+            paintbrush.setColor(Color.GREEN)
+            currentcolor(paintbrush.color)
+        }
+        eraseb.setOnClickListener{
         pathList.clear()
             colorList.clear()
             path.reset()
